@@ -23,7 +23,9 @@ module.exports = function toReadable (number) {
   
     return result.filter(item => item != '').join(' ');
   }
-  
+  if (number === 0) {
+    return 'zero';
+  }
   let numberInWords = [];
   let bigNumbers = [ '', 'thousand', 'million', 'billion', 'trillion'];
   let numberArray = number.toString().split('');// число переводим в массив цифр
